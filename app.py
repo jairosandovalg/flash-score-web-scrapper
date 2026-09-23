@@ -2,6 +2,7 @@
 #Cargar librerias
 #========================================================
 from playwright.sync_api import sync_playwright
+import requests                                          #Permite enviar mensajes a telegram
 
 #========================================================
 #Configurar telegram
