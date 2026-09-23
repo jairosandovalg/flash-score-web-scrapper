@@ -8,7 +8,8 @@ from playwright.sync_api import sync_playwright
 #========================================================
 def ():
   with sync_playwright() as p:
-      browser = p.chromium.launch(headless=True)
+      browser = p.chromium.launch(
+                                  headless=True)        #Ejecutar sin vetana gráfica
       page = browser.new_page()
       page.goto("https://example.com")
       
