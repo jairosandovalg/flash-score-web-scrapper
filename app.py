@@ -1,13 +1,15 @@
 #========================================================
 #Cargar librerias
 #========================================================
+import os                                                #Permite interactuar con el sistema operativo 
 from playwright.sync_api import sync_playwright
 import requests                                          #Permite enviar mensajes a telegram
 
 #========================================================
 #Configurar telegram
 #========================================================
-
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")      #Leer las credenciales (TOKEN/CHAT_ID) desde las variables de entorno
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 #========================================================
 #Configurar el navegador
