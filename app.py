@@ -15,7 +15,8 @@ import requests                                          #Permite enviar mensaje
 def ():
   with sync_playwright() as p:
       browser = p.chromium.launch(
-                                  headless=True)        #Ejecutar sin vetana gráfica
+                                  headless=True          #Ejecutar sin vetana gráfica
+                                )   
       page = browser.new_page()
       page.goto("https://example.com")
       
