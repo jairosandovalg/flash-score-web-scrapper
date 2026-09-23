@@ -24,7 +24,7 @@ def enviar_alerta_telegram(mensaje: str) -> bool:
     }
     try:
         response = requests.post(url, json=payload, timeout=10)
-        return response.status_code == 200
+        return response.status_code == 200                                #Devuelve True si el status code es 200, False en caso contrari
     except Exception as e:
         print(f"Error al enviar a Telegram: {e}")
         return False
@@ -43,9 +43,9 @@ def ():
   with sync_playwright() as p:
       browser = p.chromium.launch(
                                   headless=True                         #Ejecutar sin vetana gráfica
-                                  args=["--no-sandbox",                 # Desactiva el aislamiento de seguridad de Chromium; necesario para correr como root o en contenedores Docker / CI
-                                        "--disable-setuid-sandbox",     # Deshabilita la capa de sandbox basada en setuid; evita fallos de permisos en sistemas Linux restringidos
-                                        "--disable-dev-shm-usage"]      # Fuerza el uso de /tmp en disco en lugar de la memoria compartida (/dev/shm), evitando cierres por falta de memoria RAM
+                                  args=["--no-sandbox",                 #Desactiva el aislamiento de seguridad de Chromium; necesario para correr como root o en contenedores Docker / CI
+                                        "--disable-setuid-sandbox",     #Deshabilita la capa de sandbox basada en setuid; evita fallos de permisos en sistemas Linux restringidos
+                                        "--disable-dev-shm-usage"]      #Fuerza el uso de /tmp en disco en lugar de la memoria compartida (/dev/shm), evitando cierres por falta de memoria RAM
                                 )   
     
       context = browser.new_context(
