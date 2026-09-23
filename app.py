@@ -15,9 +15,20 @@ from playwright.sync_api import sync_playwright                        #Importar
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")                    #Leer las credenciales (TOKEN/CHAT_ID) 
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")                        #desde las variables de entorno
 
-def ():
-
-  return 
+def enviar_alerta_telegram(mensaje: str) -> bool:
+    """Envía un mensaje formateado a Telegram mediante la API HTTP."""
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+    payload = {
+        "chat_id": TELEGRAM_CHAT_ID,
+        "text": mensaje,
+        "parse_mode": "HTML"
+    }
+    try:
+        response = requests.post(url, json=payload, timeout=10)
+        return response.status_code == 200
+    except Exception as e:
+        print(f"Error al enviar a Telegram: {e}")
+        return False
 
 #====================================================================
 #Configurar requerimientos
