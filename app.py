@@ -16,6 +16,13 @@ def ():
   return 
 
 #========================================================
+#Configurar requerimientos
+#========================================================
+def ():
+  return
+  
+
+#========================================================
 #Configurar el navegador
 #========================================================
 def ():
@@ -29,5 +36,8 @@ def ():
       # Extraer contenido tras la ejecución de JS
       titulo = page.locator("h1").inner_text()
       
-      
       browser.close()
+
+if __name__ == "__main__":                               #Asegurar que el bloque de código debajo de ella solo se ejecute
+                                                         #cuando el archivo se corre directamente
+
