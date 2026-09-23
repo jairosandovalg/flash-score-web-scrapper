@@ -39,5 +39,6 @@ def ():
       browser.close()
 
 if __name__ == "__main__":                               #Asegurar que el bloque de código debajo de ella solo se ejecute
-                                                         #cuando el archivo se corre directamente
+                                                         #cuando el archivo se corre directamente, y no cuando se importa 
+                                                         #como un módulo desde otro script de Python.
 
