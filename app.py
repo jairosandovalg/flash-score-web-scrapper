@@ -8,7 +8,6 @@ import sys                                                             #Interact
 from bs4 import BeautifulSoup                                          #Parser HTML/XML para navegar, buscar y extraer datos del árbol DOM de una página web 
 from playwright.sync_api import sync_playwright                        #Importar el administrador de contexto sincrono
 
-
 #====================================================================
 #Configurar telegram
 #====================================================================
