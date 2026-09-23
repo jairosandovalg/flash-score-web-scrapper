@@ -11,6 +11,10 @@ import requests                                          #Permite enviar mensaje
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")      #Leer las credenciales (TOKEN/CHAT_ID) 
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")          #desde las variables de entorno
 
+def ():
+
+  return 
+
 #========================================================
 #Configurar el navegador
 #========================================================
