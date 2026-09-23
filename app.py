@@ -2,8 +2,12 @@
 #Cargar librerias
 #====================================================================
 import os                                                              #Permite interactuar con el sistema operativo 
-from playwright.sync_api import sync_playwright                        #Importar el administrador de contexto sincrono
 import requests                                                        #Permite enviar mensajes a telegram
+import time
+import sys                                                             #Interactuar con el intérprete de Python (manejo de argumentos de consola sys.argv, salidas controladas sys.exit y flujos de error sys.stderr)
+from bs4 import BeautifulSoup                                          #Parser HTML/XML para navegar, buscar y extraer datos del árbol DOM de una página web 
+from playwright.sync_api import sync_playwright                        #Importar el administrador de contexto sincrono
+
 
 #====================================================================
 #Configurar telegram
