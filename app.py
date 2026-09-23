@@ -4,6 +4,11 @@
 from playwright.sync_api import sync_playwright
 
 #========================================================
+#Configurar telegram
+#========================================================
+
+
+#========================================================
 #Configurar el navegador
 #========================================================
 def ():
@@ -15,6 +20,6 @@ def ():
       
       # Extraer contenido tras la ejecución de JS
       titulo = page.locator("h1").inner_text()
-      print(titulo)
+      
       
       browser.close()
