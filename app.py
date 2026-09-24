@@ -24,7 +24,7 @@ def enviar_alerta_telegram(mensaje: str) -> bool:
     }
     try:
         response = requests.post(url, json=payload, timeout=10)
-        return response.status_code == 200                                #Devuelve True si el status code es 200, False en caso contrari
+        return response.status_code == 200                                #Devuelve True si el status code es 200
     except Exception as e:
         print(f"Error al enviar a Telegram: {e}")
         return False
