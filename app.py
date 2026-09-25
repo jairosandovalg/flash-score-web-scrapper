@@ -76,7 +76,11 @@ def ():
       main = context.new_page()
       
       try:
-            main.goto("https://www.flashscore.pe/", timeout=35000, wait_until="domcontentloaded")
+            main.goto(
+                        "https://www.flashscore.pe/",                                                    #URL de destino a la que navegará el navegador
+                        timeout=35000,                                                                   #Tiempo máximo de espera (35 segundos) antes de lanzar un error
+                        wait_until="domcontentloaded"                                                    #Considera la carga completa apenas el DOM esté listo (sin esperar imágenes ni estilos)
+                    )
             btn_live = "//div[contains(@class, 'filters__text') and text()='EN DIRECTO']"                #<div class="filters__text filters__text--short">EN DIRECTO</div>
             main.wait_for_selector(btn_live, timeout=15000)                                              #Esperar hasta 15 segundos a que el botón 'Live' esté disponible en el DOM  
             main.locator(btn_live).click()                                                               #Hacer clic en el botón 'Live'     
