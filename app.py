@@ -83,8 +83,11 @@ def ():
             main.wait_for_timeout(3000)
 
             soup = BeautifulSoup(main.content(), "html.parser")
-      
-      browser.close()
+
+      except Exception as e:
+            print(f"Error durante el escaneo general: {e}")          
+      finally:
+            browser.close()
     
 if __name__ == "__main__":                                             #Asegurar que el bloque de código debajo de ella solo se ejecute
                                                                        #cuando el archivo se corre directamente, y no cuando se importa 
