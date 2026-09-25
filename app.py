@@ -33,6 +33,12 @@ def enviar_alerta_telegram(mensaje: str) -> bool:
 #Configurar requerimientos
 #====================================================================
 def ():
+    "Partido" : ""
+    "Marcador" : ""
+    "Cuotas" : ""
+    "Tiempo" : ""
+    "Minuto" : ""
+    "Estadisticas" : {}
   return
   
 
