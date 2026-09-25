@@ -66,13 +66,13 @@ def ():
                                 )   
     
       context = browser.new_context(
-          #El navegador se identifique ante las páginas web como un usuario humano común navegando en Google Chrome sobre Windows 10/11 de 64 bits.
-          user_agent=(
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "              #Mozilla/5.0, es un prefijo estándar por razones de compatibilidad histórica en la web
-              "AppleWebKit/537.36 (KHTML, like Gecko) "                 #El motor de renderizado base del navegador.
-              "Chrome/122.0.0.0 Safari/537.36"                          #Informa que el navegador es Google Chrome versión 122.
-          )
-      )
+                                  #El navegador se identifique ante las páginas web como un usuario humano común navegando en Google Chrome sobre Windows 10/11 de 64 bits.
+                                  user_agent=(
+                                              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "              #Mozilla/5.0, es un prefijo estándar por razones de compatibilidad histórica en la web
+                                              "AppleWebKit/537.36 (KHTML, like Gecko) "                 #El motor de renderizado base del navegador.
+                                              "Chrome/122.0.0.0 Safari/537.36"                          #Informa que el navegador es Google Chrome versión 122.
+                                              )
+                                  )
       main = context.new_page()
       
       try:
