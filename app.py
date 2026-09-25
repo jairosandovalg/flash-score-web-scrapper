@@ -77,7 +77,7 @@ def ():
       
       try:
             main.goto("https://www.flashscore.pe/", timeout=35000, wait_until="domcontentloaded")
-            btn_live = "//div[contains(@class, 'filters__text') and text()='EN DIRECTO']"
+            btn_live = "//div[contains(@class, 'filters__text') and text()='EN DIRECTO']"                #<div class="filters__text filters__text--short">EN DIRECTO</div>
             main.wait_for_selector(btn_live, timeout=15000)
             main.locator(btn_live).click()
             main.wait_for_timeout(3000)
