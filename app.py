@@ -18,10 +18,10 @@ def enviar_alerta_telegram(mensaje: str) -> bool:
     """Envía un mensaje formateado a Telegram mediante la API HTTP."""
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     payload = {
-        "chat_id": TELEGRAM_CHAT_ID,
-        "text": mensaje,
-        "parse_mode": "HTML"
-    }
+                "chat_id": TELEGRAM_CHAT_ID,
+                "text": mensaje,
+                "parse_mode": "HTML"
+                }
     try:
         response = requests.post(url, json=payload, timeout=10)
         return response.status_code == 200                                #Devuelve True si el status code es 200
