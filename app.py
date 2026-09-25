@@ -29,16 +29,27 @@ def enviar_alerta_telegram(mensaje: str) -> bool:
         print(f"Error al enviar a Telegram: {e}")
         return False
 
+
+#====================================================================
+#Estadisticas Principales
+#====================================================================
+
+
+
 #====================================================================
 #Configurar requerimientos
 #====================================================================
 def ():
-    "Partido" : ""
-    "Marcador" : ""
-    "Cuotas" : ""
-    "Tiempo" : ""
-    "Minuto" : ""
-    "Estadisticas" : {}
+    data = {
+            "Partido" : ""
+            "Marcador" : ""
+            "Cuotas" : ""
+            "Tiempo" : ""
+            "Minuto" : ""
+            "Estadisticas" : {}
+            }
+
+
   return
   
 
