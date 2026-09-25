@@ -75,8 +75,14 @@ def ():
       )
       main = context.new_page()
       
-      # Extraer contenido tras la ejecución de JS
-      titulo = page.locator("h1").inner_text()
+      try:
+            main.goto("https://www.flashscore.pe/", timeout=35000, wait_until="domcontentloaded")
+            btn_live = "//div[contains(@class, 'filters__text') and text()='EN DIRECTO']"
+            main.wait_for_selector(btn_live, timeout=15000)
+            main.locator(btn_live).click()
+            main.wait_for_timeout(3000)
+
+            soup = BeautifulSoup(main.content(), "html.parser")
       
       browser.close()
     
