@@ -73,14 +73,25 @@ def partidos():
             }
 
     #==================================================================
-    #Extraer Marcador, Estado y Minuto    
+    #Cabecera
     #==================================================================   
-    score = soup_resumen.select_one("div.detailScore__wrapper")
+    soup_resumen = BeautifulSoup(page.content(), "html.parser")
 
     #==================================================================
     #Extraer Marcador, Estado y Minuto    
     #================================================================== 
+    score = soup_resumen.select_one("div.detailScore__wrapper")
+    if score:
+        datos_partido["Marcador"] = score.get_text(separator=" ", strip=True)
 
+    status = soup_resumen.select_one("span.fixedHeaderDuel__detailStatus")
+    if status:
+        datos_partido["Tiempo/Estado"] = status.get_text(strip=True)
+
+    minuto = soup_resumen.select_one("span.eventTime")
+    if minuto:
+        datos_partido["Minuto"] = minuto.get_text(strip=True)
+        
     #==================================================================
     #Extraer Cuotas 1X2
     #================================================================== 
