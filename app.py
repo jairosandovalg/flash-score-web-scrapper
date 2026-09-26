@@ -82,6 +82,7 @@ def partidos():
     #==================================================================
     #Extraer Estadísticas Principales
     #================================================================== 
+    tab_stats = page.locator('a[data-analytics-alias="match-statistics"], a:has-text("ESTADÍSTICAS"), button:has-text("ESTADÍSTICAS")').first
 
 
 
