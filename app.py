@@ -72,38 +72,50 @@ def partidos():
             "Estadisticas" : {}
             }
 
-    #==================================================================
-    #Cabecera
-    #==================================================================   
-    soup_resumen = BeautifulSoup(page.content(), "html.parser")
+    try:
+        #==================================================================
+        #Cabecera
+        #==================================================================   
+        soup_resumen = BeautifulSoup(page.content(), "html.parser")
 
-    #==================================================================
-    #Extraer Marcador, Estado y Minuto    
-    #================================================================== 
-    score = soup_resumen.select_one("div.detailScore__wrapper")
-    if score:
-        datos_partido["Marcador"] = score.get_text(separator=" ", strip=True)
-
-    status = soup_resumen.select_one("span.fixedHeaderDuel__detailStatus")
-    if status:
-        datos_partido["Tiempo/Estado"] = status.get_text(strip=True)
-
-    minuto = soup_resumen.select_one("span.eventTime")
-    if minuto:
-        datos_partido["Minuto"] = minuto.get_text(strip=True)
+        #==================================================================
+        #Extraer Marcador, Estado y Minuto    
+        #================================================================== 
+        score = soup_resumen.select_one("div.detailScore__wrapper")
+        if score:
+            datos_partido["Marcador"] = score.get_text(separator=" ", strip=True)
+    
+        status = soup_resumen.select_one("span.fixedHeaderDuel__detailStatus")
+        if status:
+            datos_partido["Tiempo/Estado"] = status.get_text(strip=True)
+    
+        minuto = soup_resumen.select_one("span.eventTime")
+        if minuto:
+            datos_partido["Minuto"] = minuto.get_text(strip=True)
         
-    #==================================================================
-    #Extraer Cuotas 1X2
-    #================================================================== 
+        #==================================================================
+        #Extraer Cuotas 1X2
+        #================================================================== 
+        botones = soup_resumen.find_all("button", attrs={"data-analytics-bookmaker-id": True})
+        valores_cuotas = []
+        for btn in botones:
+            span = btn.find("span", {"data-testid": "wcl-oddsValue"})
+            if span and span.get_text(strip=True):
+                valores_cuotas.append(span.get_text(strip=True))
+            if len(valores_cuotas) == 3:
+                break
 
-    #==================================================================
-    #Extraer Estadísticas Principales
-    #================================================================== 
-    tab_stats = page.locator(
-                                'a[data-analytics-alias="match-statistics"], '
-                                'a:has-text("ESTADÍSTICAS"), '
-                                'button:has-text("ESTADÍSTICAS")'
-                            ).first
+        if len(valores_cuotas) >= 3:
+            datos_partido["Cuotas"] = f"1: {valores_cuotas[0]} | X: {valores_cuotas[1]} | 2: {valores_cuotas[2]}"    
+            
+        #==================================================================
+        #Extraer Estadísticas Principales
+        #================================================================== 
+        tab_stats = page.locator(
+                                    'a[data-analytics-alias="match-statistics"], '
+                                    'a:has-text("ESTADÍSTICAS"), '
+                                    'button:has-text("ESTADÍSTICAS")'
+                                ).first
 
 
 
