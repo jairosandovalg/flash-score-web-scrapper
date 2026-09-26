@@ -40,15 +40,17 @@ def enviar_alerta_telegram(mensaje: str) -> bool:
 #Configurar requerimientos
 #====================================================================
 def ():
-
+    
+    estadisticas = {}
     #==================================================================
     #1. Filas métricas estándar (xG, Posesión, Grandes ocasiones, Toques, Remates totales)    
     #================================================================== 
     for fila in soup_bloque.select('div[data-testid="wcl-statistics"]'):
 
     #==================================================================
-    #2.   
+    #2. Remates fuera y Remates a puerta (bloque de portería)   
     #==================================================================
+    shot_container = soup_bloque.select_one('[class*="shotOnTargetStats_"]')
         
     #==================================================================
     #3. Córneres, Tarjetas amarillas y rojas (Badges SVG inferiores)    
