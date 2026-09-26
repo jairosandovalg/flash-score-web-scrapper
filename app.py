@@ -40,14 +40,6 @@ def enviar_alerta_telegram(mensaje: str) -> bool:
 #Configurar requerimientos
 #====================================================================
 def ():
-    data = {
-            "Partido" : ""
-            "Marcador" : ""
-            "Cuotas" : ""
-            "Tiempo" : ""
-            "Minuto" : ""
-            "Estadisticas" : {}
-            }
 
     #==================================================================
     #1. Filas métricas estándar (xG, Posesión, Grandes ocasiones, Toques, Remates totales)    
@@ -64,7 +56,19 @@ def ():
     for badge in soup_bloque.select('[class*="incidentValueBadge_"]'):    
 
   return
-  
+
+#====================================================================
+#Diccionario de partidos 
+#====================================================================
+def partidos():
+    data = {
+            "Partido" : ""
+            "Marcador" : ""
+            "Cuotas" : ""
+            "Tiempo" : ""
+            "Minuto" : ""
+            "Estadisticas" : {}
+            }
 
 #====================================================================
 #Configurar el navegador
