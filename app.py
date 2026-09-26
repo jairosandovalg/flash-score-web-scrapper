@@ -57,7 +57,7 @@ def ():
     #==================================================================    
     for badge in soup_bloque.select('[class*="incidentValueBadge_"]'):    
 
-  return
+  return estadisticas
 
 #====================================================================
 #Cuota del evento
@@ -71,6 +71,12 @@ def partidos():
             "Minuto" : ""
             "Estadisticas" : {}
             }
+
+    #==================================================================
+    #Extraer Marcador, Estado y Minuto    
+    #==================================================================   
+    score = soup_resumen.select_one("div.detailScore__wrapper")
+
     #==================================================================
     #Extraer Marcador, Estado y Minuto    
     #================================================================== 
