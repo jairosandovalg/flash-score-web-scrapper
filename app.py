@@ -49,6 +49,19 @@ def ():
             "Estadisticas" : {}
             }
 
+    #==================================================================
+    #1. Filas métricas estándar (xG, Posesión, Grandes ocasiones, Toques, Remates totales)    
+    #================================================================== 
+    for fila in soup_bloque.select('div[data-testid="wcl-statistics"]'):
+
+    #==================================================================
+    #2.   
+    #==================================================================
+        
+    #==================================================================
+    #3. Córneres, Tarjetas amarillas y rojas (Badges SVG inferiores)    
+    #==================================================================    
+    for badge in soup_bloque.select('[class*="incidentValueBadge_"]'):    
 
   return
   
