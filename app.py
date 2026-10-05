@@ -115,7 +115,7 @@ def partidos():
                                     'a[data-analytics-alias="match-statistics"], '      #Atributo analítico ('match-statistics')  
                                     'a:has-text("ESTADÍSTICAS"), '                      #Texto visible en enlaces 
                                     'button:has-text("ESTADÍSTICAS")'                   #Botones
-                                ).first
+                                ).first                                                 #Selecciona el primer resultado que aparezca en el orden del código HTML
 
 
 
