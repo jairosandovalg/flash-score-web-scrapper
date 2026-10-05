@@ -109,12 +109,12 @@ def partidos():
             datos_partido["Cuotas"] = f"1: {valores_cuotas[0]} | X: {valores_cuotas[1]} | 2: {valores_cuotas[2]}"    
             
         #==================================================================
-        #Extraer Estadísticas Principales
+        #Localiza la pestaña de estadísticas 
         #================================================================== 
-        tab_stats = page.locator(
-                                    'a[data-analytics-alias="match-statistics"], '
-                                    'a:has-text("ESTADÍSTICAS"), '
-                                    'button:has-text("ESTADÍSTICAS")'
+        tab_stats = page.locator(                                                       #Estrategia fallback (seleccionando la primera coincidencia)                  
+                                    'a[data-analytics-alias="match-statistics"], '      #Atributo analítico ('match-statistics')  
+                                    'a:has-text("ESTADÍSTICAS"), '                      #Texto visible en enlaces 
+                                    'button:has-text("ESTADÍSTICAS")'                   #Botones
                                 ).first
 
 
