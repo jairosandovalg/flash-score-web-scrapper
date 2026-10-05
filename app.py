@@ -50,7 +50,7 @@ def ():
     #==================================================================
     #2. Remates fuera y Remates a puerta (bloque de portería)   
     #==================================================================
-    shot_container = soup_bloque.select_one('[class*="shotOnTargetStats_"]')
+    shot_container = soup_bloque.select_one('[class*="shotOnTargetStats_"]')            #Busca el elemento de estadísticas de tiros al arco coincidiendo parcialmente con el prefijo 'shotOnTargetStats_'
         
     #==================================================================
     #3. Córneres, Tarjetas amarillas y rojas (Badges SVG inferiores)    
