@@ -55,7 +55,7 @@ def ():
     #==================================================================
     #3. Córneres, Tarjetas amarillas y rojas (Badges SVG inferiores)    
     #==================================================================    
-    for badge in soup_bloque.select('[class*="incidentValueBadge_"]'):    
+    for badge in soup_bloque.select('[class*="incidentValueBadge_"]'):                  #Obtiene la lista de elementos visuales (badges) asociados a las incidencias mediante coincidencia parcial de clase ('incidentValueBadge_'),  
 
   return estadisticas
 
