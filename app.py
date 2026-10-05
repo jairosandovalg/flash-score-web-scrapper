@@ -45,7 +45,7 @@ def ():
     #==================================================================
     #1. Filas métricas estándar (xG, Posesión, Grandes ocasiones, Toques, Remates totales)    
     #================================================================== 
-    for fila in soup_bloque.select('div[data-testid="wcl-statistics"]'):
+    for fila in soup_bloque.select('div[data-testid="wcl-statistics"]'):                #Busca todos los elementos <div> con el atributo de prueba 'data-testid="wcl-statistics"'
 
     #==================================================================
     #2. Remates fuera y Remates a puerta (bloque de portería)   
